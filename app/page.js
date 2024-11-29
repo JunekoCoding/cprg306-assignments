@@ -44,6 +44,14 @@ export default function Page() {
           Week 6
         </Link>
       </p>
+      <p className="flex justify-center">
+        <Link
+          href="/week-7"
+          className="text-blue-500 hover:text-orange-500 hover:underline"
+        >
+          Week 7
+        </Link>
+      </p>
     </main>
   );
 }
