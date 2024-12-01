@@ -75,7 +75,7 @@ export default function ItemList() {
     };
 
     return (
-      <ul className="w-1/3">
+      <ul className="w-1">
         <Item {...item1} />
         <Item {...item2} />
         <Item {...item3} />

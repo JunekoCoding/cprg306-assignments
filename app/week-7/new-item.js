@@ -46,7 +46,7 @@ export default function NewItem({ onAddItem }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md"
+      className="max-w-sm p-3 bg-white rounded-lg shadow-md"
     >
       {/* Name */}
       <div className="mb-6">
@@ -82,7 +82,7 @@ export default function NewItem({ onAddItem }) {
               type="button"
               onClick={decrement}
               disabled={quantity === 1}
-              className="px-4 py-2 font-bold text-white bg-blue-400 rounded-md disabled:bg-gray-400 hover:bg-blue-500"
+              className="px-5 py-2 font-bold text-white bg-blue-400 rounded-md disabled:bg-gray-400 hover:bg-blue-500"
             >
               -
             </button>
