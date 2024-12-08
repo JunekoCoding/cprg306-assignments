@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Item from "./item.js";
 
-export default function ItemList( { items } ) {
+export default function ItemList({ items, onUpdateItem }) {
   const [sortBy, setSortBy] = useState("name");
 
   const sortedItems = [...items].sort((a, b) => {
@@ -17,27 +17,28 @@ export default function ItemList( { items } ) {
 
   return (
     <div>
-      <label
-        htmlFor="sort-by"
-        className="text-gray-200 text-md font-bold p-4"
-      >
+      <label htmlFor="sort-by" className="text-gray-200 text-md font-bold p-4">
         Sort By:
       </label>
       <button
         onClick={() => setSortBy("name")}
-        className={`bg-orange-500 rounded-sm mr-2 ${sortBy === "name" ? "bg-orange-700" : ""}`}
+        className={`bg-orange-500 rounded-sm mr-2 ${
+          sortBy === "name" ? "bg-orange-700" : ""
+        }`}
       >
         Name
       </button>
       <button
         onClick={() => setSortBy("category")}
-        className={`bg-orange-500 rounded-sm mr-2 ${sortBy === "category" ? "bg-orange-700" : ""}`}
+        className={`bg-orange-500 rounded-sm mr-2 ${
+          sortBy === "category" ? "bg-orange-700" : ""
+        }`}
       >
         Category
       </button>
       <ul>
         {sortedItems.map((item) => (
-          <Item key={item.id} item={item} />
+          <Item key={item.id} item={item} onUpdateItem={onUpdateItem} />
         ))}
       </ul>
     </div>

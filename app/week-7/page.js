@@ -1,4 +1,4 @@
-"use client";  
+"use client";
 
 import { useState } from "react";
 import ItemList from "./item-list";
@@ -6,12 +6,18 @@ import NewItem from "./new-item";
 import itemsData from "./items.json";
 
 export default function Page() {
-  // Initialize state inside the component function
   const [items, setItems] = useState(itemsData);
 
-  // Event handler to add a new item to the list
   const handleAddItem = (newItem) => {
     setItems((prevItems) => [...prevItems, newItem]);
+  };
+
+  const handleUpdateItem = (updatedItem) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === updatedItem.id ? updatedItem : item
+      )
+    );
   };
 
   return (
@@ -19,12 +25,14 @@ export default function Page() {
       <h1 className="ml-4 mb-2 text-3xl font-bold text-gray-200">
         Shopping List
       </h1>
-      
-      {/* Pass items as a prop to ItemList */}
-      <ItemList items={items} />
-      
-      {/* Pass handleAddItem as onAddItem to NewItem */}
-      <NewItem onAddItem={handleAddItem} />
+      <div className="flex flex-col lg:flex-row">
+        <div className="lg:w-1/4">
+          <NewItem onAddItem={handleAddItem} />
+        </div>
+        <div className="flex-1 lg:ml-4 mt-4 lg:mt-0">
+          <ItemList items={items} onUpdateItem={handleUpdateItem} />
+        </div>
+      </div>
     </main>
   );
 }

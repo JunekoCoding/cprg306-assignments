@@ -68,9 +68,7 @@ export function NewItem() {
         </label>
         <div className="flex items-center justify-between p-2 outline rounded-md shadow-sm">
           {/* Numerical Value */}
-          <span className="text-lg font-medium text-gray-700">
-            {quantity}
-          </span>
+          <span className="text-lg font-medium text-gray-700">{quantity}</span>
 
           {/* Buttons */}
           <div className="flex gap-4">
