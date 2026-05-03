@@ -19,10 +19,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      {/* 
+          min-h-screen: Ensures the body is at least as tall as the window.
+          bg-slate-950: Sets dark background globally.
+      */}
+      <body className="min-h-screen bg-slate-950 text-white antialiased">
         {children}
       </body>
     </html>
