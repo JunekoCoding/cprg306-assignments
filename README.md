@@ -31,5 +31,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Firebase Deployment
 
-WIP Deployment [Firebase Deployment](https://webdev2-demos-d49bc.web.app/) 
+WIP [Firebase Deployment](https://webdev2-demos-d49bc.web.app/) 
 
